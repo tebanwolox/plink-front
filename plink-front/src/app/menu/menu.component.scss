@@ -1,0 +1,33 @@
+@import '~src/scss/_colors';
+
+.menu-container {
+  border: 1px solid $gray;
+  border-radius: 5px;
+  margin: 40px auto;
+  width: fit-content;
+}
+
+::ng-deep .mat-tab-header {
+  border-bottom: 1px solid $gray;
+
+  .mat-tab-label {
+    align-items: flex-end;
+    font-size: 15px;
+    height: 80px;
+    padding: 20px;
+    width: 460px;
+  }
+
+  .mat-tab-label-active {
+    border-bottom: 3px solid $blue;
+    opacity: 1;
+
+    &>.mat-tab-label-content {
+      color: $blue;
+    }
+  }
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar{
+  background-color: $blue;
+}
