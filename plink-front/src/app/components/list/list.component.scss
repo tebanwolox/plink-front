@@ -1,0 +1,21 @@
+@import '~src/scss/_colors';
+
+.title-container {
+  border: 1px solid $gray;
+  box-shadow: 5px 5px 5px 0px $gray;
+  display: grid;
+  grid-template-columns: 30% 25% 25% 20%;
+  margin: 20px 30px;
+  padding: 25px;
+
+  .title {
+    justify-self: center;
+  }
+}
+
+.list-cont {
+  margin: auto;
+  max-width: 900px;
+  width: 100%;
+}
+

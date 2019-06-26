@@ -1,0 +1,65 @@
+@import '~src/scss/_colors';
+
+.coin-container {
+  border: 1px solid $gray;
+  display: grid;
+  grid-template-columns: 30% 25% 25% 20%;
+  margin: 15px 30px;
+  padding: 10px;
+
+  .coin-price {
+    align-self: center;
+    color: $blue;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    justify-self: center;
+  }
+
+  .coin-crypt {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .coin-name {
+    align-self: center;
+  }
+
+  .coin-convert {
+    align-items: center;
+    justify-self: center;
+
+    .img-convert {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}
+
+.red-cont {
+  color: $red;
+  display: flex;
+}
+
+.green-cont {
+  color: $green;
+  display: flex;
+  justify-self: center;
+}
+
+.led-green {
+  background-color: $green;
+  border-radius: 50%;
+  height: 15px;
+  margin: 0 15px;
+  width: 15px;
+}
+
+.led-red {
+  background-color: $red;
+  border-radius: 50%;
+  height: 15px;
+  margin: 0 10px;
+  width: 15px;
+}
