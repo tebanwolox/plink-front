@@ -14,7 +14,6 @@ export class CoinComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.coin);
     if (this.coin.crypto === '1') {
       this.crypto = true;
     } else {

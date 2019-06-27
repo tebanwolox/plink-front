@@ -2,9 +2,9 @@
   <p class="coin-name">{{coin.name}}</p>
   <p class="coin-price">{{coin.price | currency}}</p>
   <div class="coin-crypt">
-    <div *ngIf="crypto; else noCrypto" class="green-cont"><div class="led-green"></div>Si</div>
+    <span *ngIf="crypto; else noCrypto" class="green-cont"><div class="led-green"></div>Si</span>
     <ng-template #noCrypto>
-      <div class="red-cont"><div class="led-red"></div>No</div>
+      <span class="red-cont">No</span>
     </ng-template>
   </div>
   <div class="coin-convert"><img src="assets/shuffle.png" class="img-convert"></div>

@@ -36,7 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
-      multi: true}
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

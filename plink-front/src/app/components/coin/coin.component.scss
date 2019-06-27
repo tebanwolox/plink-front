@@ -40,26 +40,28 @@
 .red-cont {
   color: $red;
   display: flex;
+
+  &::before {
+    background-color: $red;
+    border-radius: 50%;
+    content: "";
+    height: 15px;
+    margin: 0 15px;
+    width: 15px;
+  }
 }
 
 .green-cont {
   color: $green;
   display: flex;
   justify-self: center;
-}
 
-.led-green {
-  background-color: $green;
-  border-radius: 50%;
-  height: 15px;
-  margin: 0 15px;
-  width: 15px;
-}
-
-.led-red {
-  background-color: $red;
-  border-radius: 50%;
-  height: 15px;
-  margin: 0 10px;
-  width: 15px;
+  &::before {
+    background-color: $green;
+    border-radius: 50%;
+    content: "";
+    height: 15px;
+    margin: 0 15px;
+    width: 15px;
+  }
 }
