@@ -31,7 +31,8 @@ import { CoinComponent } from './components/coin/coin.component';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
-      multi: true}
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
