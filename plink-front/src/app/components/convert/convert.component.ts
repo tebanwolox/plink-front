@@ -1,13 +1,12 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CoinService } from './../../services/coin.service';
-import { of, fromEvent } from 'rxjs';
+import { fromEvent } from 'rxjs';
 import {
   debounceTime,
-  map,
-  distinctUntilChanged,
-  filter
+  map
 } from 'rxjs/operators';
+import { _countGroupLabelsBeforeOption } from '@angular/material';
 
 @Component({
   selector: 'app-convert',
@@ -23,6 +22,7 @@ export class ConvertComponent implements OnInit {
   from = 'BTC';
   to = 'USD';
   quantity = 0;
+  changeValue = 0;
 
   constructor(
     private fb: FormBuilder,
@@ -57,8 +57,25 @@ export class ConvertComponent implements OnInit {
   convert(amount: number, from: string, to: string) {
     this.coinService.convert(amount, from, to)
       .subscribe(res => {
-        this.quantity = res.to_quantity;
+        if (res.success) {
+          this.quantity = res.to_quantity;
+        }
       });
   }
 
+  changeConvertion() {
+    const amount = this.rForm.get('amount').value;
+    const from = this.rForm.get('from').value;
+    const to = this.rForm.get('to').value;
+    this.rForm.get('from').setValue(to);
+    this.rForm.get('to').setValue(from);
+    this.convert(amount, from, to);
+  }
+
+  convertValues() {
+    const amount = this.rForm.get('amount').value;
+    const from = this.rForm.get('from').value;
+    const to = this.rForm.get('to').value;
+    this.convert(amount, from, to);
+  }
 }

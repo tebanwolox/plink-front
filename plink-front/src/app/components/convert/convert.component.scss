@@ -24,6 +24,7 @@
   }
 
   .input-form {
+    background-color: $white;
     margin: 10px;
     border: 1px solid $dark-gray;
     border-radius: 20px;
@@ -32,22 +33,31 @@
     text-align-last: center;
     font-size: 20px;
   }
-}
 
-.select-form {
-  position: relative;
+  .select-form {
+    position: relative;
+  }
 
-  &::before {
-    background-image: url("src/assets/down-arrow.png");
-    width: 10px;
-    height: 10px;
-    content: ",kjmhgfd";
-    position: absolute;
-    right: 0;
+  .select-cont{
+    position: relative;
+
+    &::after {
+      background-image: url("src/assets/down-arrow.png");
+      background-size: 20px 20px;
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 20px;
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 
 .change-btn {
+  //background-image: url("src/assets/exchange.png");
+  background: transparent url('src/assets/exchange.png') no-repeat top;
   width: 30px;
   height: 30px;
   position: absolute;
