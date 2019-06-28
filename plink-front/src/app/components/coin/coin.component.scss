@@ -1,14 +1,15 @@
 @import '~src/scss/_colors';
 
 .coin-container {
+  align-items: center;
   border: 1px solid $gray;
   display: grid;
+  justify-content: center;
   grid-template-columns: 30% 25% 25% 20%;
   margin: 15px 30px;
   padding: 10px;
 
   .coin-price {
-    align-self: center;
     color: $blue;
     display: flex;
     font-size: 20px;
@@ -17,13 +18,8 @@
   }
 
   .coin-crypt {
-    align-items: center;
     display: flex;
     justify-content: center;
-  }
-
-  .coin-name {
-    align-self: center;
   }
 
   .coin-convert {
@@ -40,6 +36,7 @@
 .red-cont {
   color: $red;
   display: flex;
+  justify-content: center;
 
   &::before {
     background-color: $red;
@@ -54,7 +51,7 @@
 .green-cont {
   color: $green;
   display: flex;
-  justify-self: center;
+  justify-content: center;
 
   &::before {
     background-color: $green;

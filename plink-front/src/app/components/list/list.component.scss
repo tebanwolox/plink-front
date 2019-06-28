@@ -1,6 +1,7 @@
 @import '~src/scss/_colors';
 
 .title-container {
+  justify-content: center;
   border: 1px solid $gray;
   box-shadow: 5px 5px 5px 0px $gray;
   display: grid;
@@ -18,4 +19,3 @@
   max-width: 900px;
   width: 100%;
 }
-
