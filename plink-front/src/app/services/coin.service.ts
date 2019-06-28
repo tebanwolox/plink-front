@@ -16,4 +16,8 @@ export class CoinService {
   getCoins() {
     return this.http.get<any>(`${this.coinEndpoint}/prices?coin=btc`, {});
   }
+
+  convert(qlt: number, from: string, to: string) {
+    return this.http.get<any>(`${this.coinEndpoint}/convert?qty=${qlt}&from=${from}&to=${to}`);
+  }
 }

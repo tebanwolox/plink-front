@@ -12,6 +12,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { CoinComponent } from './components/coin/coin.component';
 import { ConvertComponent } from './components/convert/convert.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxCurrencyModule } from 'ngx-currency';
+
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MatTableModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxCurrencyModule
   ],
   providers: [
     CoinService,

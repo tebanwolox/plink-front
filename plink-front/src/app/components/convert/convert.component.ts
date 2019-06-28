@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { CoinService } from './../../services/coin.service';
+import { of, fromEvent } from 'rxjs';
+import {
+  debounceTime,
+  map,
+  distinctUntilChanged,
+  filter
+} from 'rxjs/operators';
 
 @Component({
   selector: 'app-convert',
@@ -9,19 +16,49 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ConvertComponent implements OnInit {
 
+  @Input() coins: Coin[];
+  @ViewChild('qlt') qlt: ElementRef;
+
   rForm: FormGroup;
+  from = 'BTC';
+  to = 'USD';
+  quantity = 0;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private coinService: CoinService
   ) {
     this.rForm = this.fb.group({
-      amount: ['', Validators.compose([Validators.required])],
+      amount: ['', Validators.compose([Validators.required, Validators.min(0)])],
       from: ['', Validators.compose([Validators.required])],
       to: ['', Validators.compose([Validators.required])],
     });
   }
 
   ngOnInit() {
+    this.coins.push({
+      id_currency: 'BTC',
+      name: 'Bitcoin',
+      price: '1',
+      crypto: '1'
+    });
+    this.coins.sort();
+
+    fromEvent(this.qlt.nativeElement, 'keyup').pipe(
+      map((event: any) => {
+        return event.target.value;
+      })
+      , debounceTime(1000)
+      ).subscribe((amount: number) => {
+        this.convert(amount, this.rForm.get('from').value, this.rForm.get('to').value);
+      });
+  }
+
+  convert(amount: number, from: string, to: string) {
+    this.coinService.convert(amount, from, to)
+      .subscribe(res => {
+        this.quantity = res.to_quantity;
+      });
   }
 
 }
