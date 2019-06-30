@@ -1,0 +1,27 @@
+@import '~src/scss/_colors';
+
+.title-container {
+  align-items: center;
+  border: 1px solid $gray;
+  box-shadow: 5px 5px 5px 0px $gray;
+  display: flex;
+  justify-content: center;
+  margin: 20px 30px;
+  padding: 25px;
+
+  .title {
+    align-self: center;
+    flex: 2;
+    text-align: center;
+  }
+
+  .title-name {
+    flex: 3;
+  }
+}
+
+.list-cont {
+  margin: auto;
+  max-width: 900px;
+  width: 100%;
+}

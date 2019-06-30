@@ -3,8 +3,10 @@
 .menu-container {
   border: 1px solid $gray;
   border-radius: 5px;
-  margin: 40px auto;
-  width: fit-content;
+  margin: 70px auto;
+  max-width: 1200px;
+  width: 100%;
+  height: 800px;
 }
 
 ::ng-deep .mat-tab-header {
@@ -15,7 +17,8 @@
     font-size: 15px;
     height: 80px;
     padding: 20px;
-    width: 460px;
+    max-width: 599px;
+    width: 100%;
   }
 
   .mat-tab-label-active {

@@ -1,0 +1,71 @@
+@import '~src/scss/_colors';
+
+.coin-container {
+  align-items: center;
+  border: 1px solid $gray;
+  display: flex;
+  justify-content: center;
+  margin: 15px 30px;
+  padding: 10px;
+
+  .coin-name {
+    flex: 3;
+  }
+
+  .coin-price {
+    color: $blue;
+    text-align: center;
+    flex: 2;
+    font-size: 20px;
+    font-weight: bold;
+    justify-self: center;
+  }
+
+  .img-convert {
+    flex: 2;
+    position: relative;
+
+    &::before {
+      background-image: url("src/assets/shuffle.png");
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top:  -10px;
+      content: "";
+    }
+  }
+}
+
+.red-cont {
+  flex: 2;
+  color: $red;
+  display: flex;
+  justify-content: center;
+
+  &::before {
+    background-color: $red;
+    border-radius: 50%;
+    content: "";
+    height: 15px;
+    margin: 0 15px;
+    width: 15px;
+  }
+}
+
+.green-cont {
+  color: $green;
+  display: flex;
+  flex: 2;
+  justify-content: center;
+
+  &::before {
+    background-color: $green;
+    border-radius: 50%;
+    content: "";
+    height: 15px;
+    margin: 0 15px;
+    width: 15px;
+  }
+}
