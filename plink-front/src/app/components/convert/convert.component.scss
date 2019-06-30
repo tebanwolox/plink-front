@@ -57,10 +57,19 @@
 
 .change-btn {
   //background-image: url("src/assets/exchange.png");
-  background: transparent url('src/assets/exchange.png') no-repeat top;
-  width: 30px;
-  height: 30px;
   position: absolute;
-  right: 30px;
+  right: 0;
   top: 200px;
+
+  &::before {
+    background-image: url("src/assets/exchange.png");
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    content: "";
+    height: 30px;
+    position: absolute;
+    right: 40px;
+    top: 5px;
+    width: 30px;
+  }
 }

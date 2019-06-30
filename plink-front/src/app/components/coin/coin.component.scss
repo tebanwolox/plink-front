@@ -3,32 +3,37 @@
 .coin-container {
   align-items: center;
   border: 1px solid $gray;
-  display: grid;
+  display: flex;
   justify-content: center;
-  grid-template-columns: 30% 25% 25% 20%;
   margin: 15px 30px;
   padding: 10px;
 
+  .coin-name {
+    flex: 3;
+  }
+
   .coin-price {
     color: $blue;
-    display: flex;
+    flex: 2;
     font-size: 20px;
     font-weight: bold;
     justify-self: center;
+    text-align: center;
   }
 
-  .coin-crypt {
-    display: flex;
-    justify-content: center;
-  }
+  .img-convert {
+    flex: 2;
+    position: relative;
 
-  .coin-convert {
-    align-items: center;
-    justify-self: center;
-
-    .img-convert {
-      height: 30px;
-      width: 30px;
+    &::before {
+      background-image: url("src/assets/shuffle.png");
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      content: "";
+      height: 20px;
+      position: absolute;
+      top:  -10px;
+      width: 20px;
     }
   }
 }
@@ -36,6 +41,7 @@
 .red-cont {
   color: $red;
   display: flex;
+  flex: 2;
   justify-content: center;
 
   &::before {
@@ -51,6 +57,7 @@
 .green-cont {
   color: $green;
   display: flex;
+  flex: 2;
   justify-content: center;
 
   &::before {

@@ -1,16 +1,22 @@
 @import '~src/scss/_colors';
 
 .title-container {
-  justify-content: center;
+  align-items: center;
   border: 1px solid $gray;
   box-shadow: 5px 5px 5px 0px $gray;
-  display: grid;
-  grid-template-columns: 30% 25% 25% 20%;
+  display: flex;
+  justify-content: center;
   margin: 20px 30px;
   padding: 25px;
 
   .title {
-    justify-self: center;
+    align-self: center;
+    flex: 2;
+    text-align: center;
+  }
+
+  .title-name {
+    flex: 3;
   }
 }
 

@@ -2,11 +2,13 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CoinService } from './../../services/coin.service';
 import { fromEvent } from 'rxjs';
+import { CurrencyPipe } from '@angular/common';
 import {
   debounceTime,
   map
 } from 'rxjs/operators';
 import { _countGroupLabelsBeforeOption } from '@angular/material';
+
 
 @Component({
   selector: 'app-convert',
@@ -22,7 +24,7 @@ export class ConvertComponent implements OnInit {
   from = 'BTC';
   to = 'USD';
   quantity = 0;
-  changeValue = 0;
+  changeValue = '0';
 
   constructor(
     private fb: FormBuilder,
@@ -63,13 +65,13 @@ export class ConvertComponent implements OnInit {
       });
   }
 
-  changeConvertion() {
+   changeConvertion() {
     const amount = this.rForm.get('amount').value;
-    const from = this.rForm.get('from').value;
-    const to = this.rForm.get('to').value;
+    const from = this.from;
+    const to = this.to;
     this.rForm.get('from').setValue(to);
     this.rForm.get('to').setValue(from);
-    this.convert(amount, from, to);
+    this.convert(amount, to, from);
   }
 
   convertValues() {
@@ -77,5 +79,10 @@ export class ConvertComponent implements OnInit {
     const from = this.rForm.get('from').value;
     const to = this.rForm.get('to').value;
     this.convert(amount, from, to);
+  }
+
+  currency() {
+    this.changeValue = this.changeValue.split( /(?=(?:\d{3})+(?:\.|$))/g ).join( "," );
+
   }
 }

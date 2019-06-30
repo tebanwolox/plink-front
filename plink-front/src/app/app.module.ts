@@ -13,6 +13,7 @@ import { CoinComponent } from './components/coin/coin.component';
 import { ConvertComponent } from './components/convert/convert.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxCurrencyModule } from 'ngx-currency';
+import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
 
 
 
@@ -22,7 +23,7 @@ import { NgxCurrencyModule } from 'ngx-currency';
     MenuComponent,
     ListComponent,
     CoinComponent,
-    ConvertComponent
+    ConvertComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,8 @@ import { NgxCurrencyModule } from 'ngx-currency';
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    NgxCleaveDirectiveModule
   ],
   providers: [
     CoinService,

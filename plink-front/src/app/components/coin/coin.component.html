@@ -1,9 +1,6 @@
 <div class="coin-container">
   <p class="coin-name">{{coin.name}}</p>
   <p class="coin-price">{{coin.price | currency}}</p>
-  <span *ngIf="crypto; else noCrypto" class="green-cont">Si</span>
-  <ng-template #noCrypto>
-    <span class="red-cont">No</span>
-  </ng-template>
-  <div class="coin-convert"><img src="assets/shuffle.png" class="img-convert"></div>
+  <span [ngClass]="{'green-cont': crypto, 'red-cont': !crypto}">{{crypto ? "Si" : "No"}}</span>
+  <button class="img-convert"></button>
 </div>
