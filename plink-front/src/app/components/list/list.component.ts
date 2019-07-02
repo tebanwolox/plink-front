@@ -12,6 +12,8 @@ export class ListComponent implements OnInit {
 
   limit = 20;
   visibleCoins: Coin[];
+  throttle = 600;
+  scrollDistance = 3;
 
   constructor() { }
 
