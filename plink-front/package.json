@@ -26,7 +26,6 @@
     "ngx-cleave-directive": "^1.0.6",
     "ngx-currency": "^2.0.0",
     "ngx-infinite-scroll": "^7.2.0",
-    "ngx-infinite-scroller": "^0.4.4",
     "ngx-mask": "^8.0.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
