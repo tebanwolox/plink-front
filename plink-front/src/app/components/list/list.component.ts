@@ -14,4 +14,8 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  onScrollDown() {
+    console.log('scrolllll');
+  }
 }
