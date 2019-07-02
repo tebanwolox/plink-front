@@ -78,9 +78,4 @@ export class ConvertComponent implements OnInit {
     const to = this.rForm.get('to').value;
     this.convert(amount, from, to);
   }
-
-  currency() {
-    //this.changeValue = this.changeValue.split( /(?=(?:\d{3})+(?:\.|$))/g ).join( "," );
-
-  }
 }
