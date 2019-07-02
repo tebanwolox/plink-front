@@ -1,3 +1,4 @@
+import { ConvertService } from './../../services/convert.service';
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CoinService } from './../../services/coin.service';
@@ -26,7 +27,8 @@ export class ConvertComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private coinService: CoinService
+    private coinService: CoinService,
+    private convertService: ConvertService
   ) {
     this.rForm = this.fb.group({
       amount: ['', Validators.compose([Validators.required, Validators.min(0)])],
@@ -36,6 +38,13 @@ export class ConvertComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.convertService.changeConvert.subscribe(res => {
+      this.to = res;
+      this.from = 'BTC';
+      this.changeValue = '1';
+      this.convert(1, 'BTC', res);
+    });
+
     this.coins.push({
       id_currency: 'BTC',
       name: 'Bitcoin',
