@@ -35,3 +35,14 @@
 ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar{
   background-color: $blue;
 }
+
+::ng-deep .mat-tab-body-content.ng-trigger.ng-trigger-translateTab {
+  overflow-y: hidden;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
