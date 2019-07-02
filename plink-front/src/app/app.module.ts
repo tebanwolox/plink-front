@@ -10,21 +10,33 @@ import { CoinService } from './services/coin.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { CoinComponent } from './components/coin/coin.component';
+import { ConvertComponent } from './components/convert/convert.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxCurrencyModule } from 'ngx-currency';
+import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
+export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ListComponent,
-    CoinComponent
+    CoinComponent,
+    ConvertComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatTabsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxCurrencyModule,
+    NgxCleaveDirectiveModule,
+    NgxMaskModule.forRoot(options)
   ],
   providers: [
     CoinService,

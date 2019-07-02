@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoinService } from './../../services/coin.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  coins: Coin[];
+
+  constructor(private coinService: CoinService) { }
 
   ngOnInit() {
+    this.coinService.getCoins()
+      .subscribe(res => {
+        this.coins = res.prices;
+      });
   }
 
 }

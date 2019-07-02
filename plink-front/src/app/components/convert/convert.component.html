@@ -1,0 +1,21 @@
+<form [formGroup]="rForm" class="container-form" (ngSubmit)="convert(rForm.value)">
+  <h1 class="convert-title">REALIZAR CAMBIO</h1>
+  <label class="label-input">Seleccione las monedas</label>
+  <div class="input-cont">
+    <input type="text" class="input-form" formControlName="amount" [(ngModel)]="changeValue" mask="dot_separator.2"  #qlt>
+  </div>
+  <div class="select-cont">
+    <select class="input-form select-form" [(ngModel)]='from' (change)="convertValues()" formControlName="from" >
+      <option *ngFor="let coin of coins" value="{{coin.id_currency}}">{{coin.id_currency}}</option>
+    </select>
+  </div>
+  <div class="select-cont">
+    <select class="input-form select-form" [(ngModel)]='to' formControlName="to" (change)="convertValues()">
+      <option *ngFor="let coin of coins" value="{{coin.id_currency}}">{{coin.id_currency}}</option>
+    </select>
+  </div>
+  <div class="input-cont">
+    <input type="text" disabled=true class="input-form" [value]="quantity | mask: 'dot_separator.2'">
+  </div>
+  <button class="change-btn" (click)="changeConvertion()"></button>
+</form>

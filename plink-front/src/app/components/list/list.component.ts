@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { CoinService } from '../../services/coin.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 @Component({
@@ -9,15 +8,10 @@ import { CoinService } from '../../services/coin.service';
 })
 export class ListComponent implements OnInit {
 
-  coins: Coin[];
+  @Input() coins: Coin;
 
-  constructor(private coinService: CoinService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.coinService.getCoins()
-      .subscribe(res => {
-        this.coins = res.prices;
-      });
   }
-
 }
