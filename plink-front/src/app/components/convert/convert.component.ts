@@ -2,12 +2,10 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CoinService } from './../../services/coin.service';
 import { fromEvent } from 'rxjs';
-import { CurrencyPipe } from '@angular/common';
 import {
   debounceTime,
   map
 } from 'rxjs/operators';
-import { _countGroupLabelsBeforeOption } from '@angular/material';
 
 
 @Component({
@@ -82,7 +80,7 @@ export class ConvertComponent implements OnInit {
   }
 
   currency() {
-    this.changeValue = this.changeValue.split( /(?=(?:\d{3})+(?:\.|$))/g ).join( "," );
+    //this.changeValue = this.changeValue.split( /(?=(?:\d{3})+(?:\.|$))/g ).join( "," );
 
   }
 }
