@@ -1,3 +1,4 @@
+import { ConvertService } from './../../services/convert.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -11,10 +12,14 @@ export class CoinComponent implements OnInit {
 
   crypto: boolean;
 
-  constructor() { }
+  constructor(private convertService: ConvertService) { }
 
   ngOnInit() {
     this.crypto = this.coin.crypto === '1';
+  }
+
+  convert() {
+    this.convertService.changeMessage(this.coin.id_currency);
   }
 
 }

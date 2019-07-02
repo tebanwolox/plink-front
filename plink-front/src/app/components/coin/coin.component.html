@@ -2,5 +2,5 @@
   <p class="coin-name">{{coin.name}}</p>
   <p class="coin-price">{{coin.price | currency}}</p>
   <span [ngClass]="{'green-cont': crypto, 'red-cont': !crypto}">{{crypto ? "Si" : "No"}}</span>
-  <button class="img-convert"></button>
+  <button class="img-convert" (click)="convert()"></button>
 </div>

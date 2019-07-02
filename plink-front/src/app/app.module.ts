@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
@@ -36,7 +37,8 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     ReactiveFormsModule,
     NgxCurrencyModule,
     NgxCleaveDirectiveModule,
-    NgxMaskModule.forRoot(options)
+    NgxMaskModule.forRoot(options),
+    InfiniteScrollModule
   ],
   providers: [
     CoinService,
