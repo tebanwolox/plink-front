@@ -1,6 +1,6 @@
 <form [formGroup]="rForm" class="container-form" (ngSubmit)="convert(rForm.value)">
-  <h1 class="convert-title">REALIZAR CAMBIO</h1>
-  <label class="label-input">Seleccione las monedas</label>
+  <h1 class="convert-title">{{'makeChange' | translate}}</h1>
+  <label class="label-input">{{'selectCoins' | translate}}</label>
   <div class="input-cont">
     <input type="text" class="input-form" formControlName="amount" [(ngModel)]="changeValue" mask="dot_separator.2"  #qlt>
   </div>
