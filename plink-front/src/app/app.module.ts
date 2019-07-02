@@ -14,7 +14,9 @@ import { ConvertComponent } from './components/convert/convert.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
+import {NgxMaskModule, IConfig} from 'ngx-mask';
 
+export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
     FormsModule,
     ReactiveFormsModule,
     NgxCurrencyModule,
-    NgxCleaveDirectiveModule
+    NgxCleaveDirectiveModule,
+    NgxMaskModule.forRoot(options)
   ],
   providers: [
     CoinService,

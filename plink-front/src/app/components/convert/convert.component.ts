@@ -22,7 +22,7 @@ export class ConvertComponent implements OnInit {
   from = 'BTC';
   to = 'USD';
   quantity = 0;
-  changeValue = '0';
+  changeValue = '0,00';
 
   constructor(
     private fb: FormBuilder,
