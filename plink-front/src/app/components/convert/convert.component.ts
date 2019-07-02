@@ -22,7 +22,7 @@ export class ConvertComponent implements OnInit {
   from = 'BTC';
   to = 'USD';
   quantity = 0;
-  changeValue = '0';
+  changeValue = '0,00';
 
   constructor(
     private fb: FormBuilder,
@@ -77,10 +77,5 @@ export class ConvertComponent implements OnInit {
     const from = this.rForm.get('from').value;
     const to = this.rForm.get('to').value;
     this.convert(amount, from, to);
-  }
-
-  currency() {
-    //this.changeValue = this.changeValue.split( /(?=(?:\d{3})+(?:\.|$))/g ).join( "," );
-
   }
 }
