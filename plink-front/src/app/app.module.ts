@@ -16,6 +16,7 @@ import { NgxCurrencyModule } from 'ngx-currency';
 import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxInfiniteScrollerModule } from 'ngx-infinite-scroller';
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
@@ -38,7 +39,8 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     NgxCurrencyModule,
     NgxCleaveDirectiveModule,
     NgxMaskModule.forRoot(options),
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    NgxInfiniteScrollerModule
   ],
   providers: [
     CoinService,

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 
 
 @Component({
@@ -8,11 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  @Input() coins: Coin;
+  @Input() coins: Coin[];
+
+  limit = 20;
+  visibleCoins: Coin[];
 
   constructor() { }
 
   ngOnInit() {
+    this.visibleCoins = this.coins.slice(0, 20);
   }
 
   onScrollDown() {
