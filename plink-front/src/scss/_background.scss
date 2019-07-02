@@ -1,0 +1,21 @@
+@import '~src/scss/_colors';
+
+.body{
+  background: $soft-blue;
+
+  &::after {
+    background-color: $white;
+    background-image: url("src/assets/footer.png");
+    background-size: 1400px 300px;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    content: "";
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    width: 1400px;
+    height: 100vh;
+    z-index: -1;
+  }
+}
